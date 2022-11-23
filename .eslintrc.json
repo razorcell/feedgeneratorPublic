@@ -1,0 +1,96 @@
+{
+  "env": {
+    "node": true,
+    "browser": false,
+    "commonjs": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "prettier"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "gfinalConfig": true
+  },
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module",
+    "ecmaVersion": 2020
+  },
+  "rules": {
+    "no-console": "off",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace|debug)$/]",
+        "message": "Unexpected property on console object was called"
+      }
+    ],
+    "prefer-const": [
+      "warn",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "warn"
+  }
+}
+
+
+// {
+//   "env": {
+  //     "node": true
+//     "browser": false,
+//     "es6": true,
+//   },
+//   "parser": "@typescript-eslint/parser",
+//   "parserOptions": {
+//     "project": "tsconfig.json",
+//     "sourceType": "module",
+//     "ecmaVersion": 2020
+//   },
+//   "plugins": ["@typescript-eslint", "jest"],
+//   "extends": [
+//     "eslint:recommended",
+//     "plugin:@typescript-eslint/recommended",
+//     "plugin:jest/recommended",
+//     "prettier"
+//   ],
+//   "rules": {
+//     // The following rule is enabled only to supplement the inline suppression
+//     // examples, and because it is not a recommended rule, you should either
+//     // disable it, or understand what it enforces.
+//     // https://typescript-eslint.io/rules/explicit-function-return-type/
+//     "@typescript-eslint/explicit-function-return-type": "warn"
+//   }
+// }
+
+// "parser": "eslint-plugin-typescript/parser",
+// "plugins": ["typescript"]
+//  "extends": ["plugin:typescript/recommended"],
+
+// "env": {
+//     "commonjs": true,
+//     "es6": true,
+//     "node": true
+// },
+// "extends": "eslint:recommended",
+// "globals": {},
+// "parserOptions": {
+//     "ecmaVersion": 2018
+// },
+// "rules": {
+//     // "indent": ["error", "tab"],
+//     // // "linebreak-style": ["error", "unix"],
+//     // "quotes": ["error", "double"],
+//     // "semi": ["error", "always"],
+//     // // "array-bracket-spacing": ["error", "always"],
+//     // "object-curly-spacing": ["error", "always"],
+//     // // "space-in-parens": ["error", "always"]
+// }
